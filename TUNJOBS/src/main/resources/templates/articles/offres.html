@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+ xmlns="http://www.w3.org/1999/xhtml"
+   
+    xmlns:sec="http://www.thymeleaf.org">
+
+
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="Kodinger" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Login</title>
+<body>
+
+
+<table>
+						<thead>
+							<tr>
+							<th>id de l'annonce  </th>
+								<th>titre de l 'annonce    </th>
+								<th>description de l 'annonce   </th>																
+								<th>prix</th>
+								<th>type de l'emploi</th>
+								<th>ville de l'emploi</th>
+								
+							</tr>
+						</thead>
+						<tbody>
+							<tr th:each="off:${offre}">							   
+								<td th:text="${off.id}"></td>
+								<td th:text="${off.titre}"></td>
+								<td th:text="${off.description}"></td>								
+								<td th:text="${off.createDate}"></td>
+								<td th:text="${off.price}"></td>
+								<td th:text="${off.typeEmploi}"></td>
+								<td th:text="${off.villeEmploi}"></td>
+								
+								
+<td  >  <a sec:authorize="isAuthenticated() and hasAuthority('CANDIDAT')" href="#" th:href="@{'/postuler/' + ${currentUser.getId()} + '/' +${off.id} }" >POSTULER DANS CETTE ANNONCE</a></td>
+							
+							  
+    <td><a sec:authorize="isAnonymous()"  th:href="@{/login}">connecter pour postuler</a>
+    </td>
+    
+    
+    
+								
+								
+								
+						    </tr>
+							
+						</tbody>
+					</table>
+    
+
+</body>
+</html>

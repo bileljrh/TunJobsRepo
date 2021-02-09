@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="Kodinger" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Login</title>
+<body>
+
+
+<table>
+						<thead>
+							<tr>
+							
+								<th>id de l'annonce  </th>
+								<th>titre de l 'annonce    </th>
+								<th>description de l 'annonce   </th>																
+								<th>prix</th>
+								<th>type de l'emploi</th>
+								<th>ville de l'emploi</th>
+								
+							</tr>
+						</thead>
+						<tbody>
+							<tr th:each="ann:${byid}">
+							    <td th:text="${ann.id}"></td>
+								<td th:text="${ann.titre}"></td>
+								<td th:text="${ann.description}"></td>								
+								
+								<td th:text="${ann.price}"></td>
+								<td th:text="${ann.typeEmploi}"></td>
+								<td th:text="${ann.villeEmploi}"></td>
+	<td><a  href="#" th:href="@{'/user/' + ${user.getId()} +'/annonce/'+ ${ann.id}}" >consulter l'annonce****</a></td>
+	<td><a  href="#" th:href="@{'/delete/' + ${user.getId()} +'/annonce/'+ ${ann.id}}" >supprimer l'annonce</a></td>
+	<td><a  href="#" th:href="@{'/edit/' + ${user.getId()} +'/'+ ${ann.id}}" >****modifier l'annonce</a></td>
+	
+						    </tr>
+							
+						</tbody>
+					</table>
+      <a  href="#" th:href="@{'/user/' + ${user.getId()} }" >ajouter une nouvelle annonce</a>
+		<a  href="#" th:href="@{'/users'}" >****users</a>
+	
+
+</body>
+</html>

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+ xmlns="http://www.w3.org/1999/xhtml"
+   
+    xmlns:sec="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="Kodinger" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>TUNJOBS &mdash; INSCRIPTION</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="css/my-login.css">
+</head>
+<body class="my-login-page">
+
+<!-- navbar -->
+<nav class="navbar navbar-expand-sm navbar-dark bg-primary mb-3">
+        <div class="container-fluid">
+            
+            <a class="navbar-brand" href="/">TUNJOBS</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Annonces</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="" class="nav-link dropdown-toggle"
+                        data-toggle="dropdown" id="navbarDropdownMenuLink">Emploi par type</a>
+                        <div class="dropdown-menu">
+                            <a href="#" class="dropdown-item">Type 1</a>
+                            <a href="#" class="dropdown-item">Type 2</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="" class="nav-link dropdown-toggle"
+                        data-toggle="dropdown" id="navbarDropdownMenuLink">Emploi par ville</a>
+                        <div class="dropdown-menu">
+                            <a href="#" class="dropdown-item">Ville 1</a>
+                            <a href="#" class="dropdown-item">Ville 2</a>
+                            <a href="#" class="dropdown-item">Ville 3</a>
+                            <a href="#" class="dropdown-item">Ville 4</a>
+                        </div>
+                    </li>
+
+                 
+                </ul>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a sec:authorize="isAnonymous()" href="login" class="nav-link">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a sec:authorize="isAuthenticated()" href="logout" class="nav-link">Logout</a>
+                    </li>
+                    <li class="nav-item">
+                        <a sec:authorize="isAnonymous()" href="register" class="nav-link" >Register</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+   <!--  end navbar -->	
+
+
+	<section class="h-100">
+		<div class="container h-100">
+			<div class="row justify-content-md-center h-100">
+				<div class="card-wrapper">
+					
+					<div class="card fat">
+						<div class="card-body">
+							<h4 class="card-title">S’inscrire</h4>
+
+							<div layout:fragment="content" class="container mySpace">
+								<div class="alert alert-info" th:if="${exist}">
+									<p class="text text-center">User with this username already
+										Exist</p>
+								</div>
+
+								<div layout:fragment="content" class="container mySpace">
+									<div class="alert alert-info" th:if="${exist1}">
+										<p class="text text-center">User with this Email already
+											Exist</p>
+									</div>
+
+
+									<form method="POST" class="form-group" novalidate="" th:action="@{/register}" th:object="${user}" encType="multipart/form-data" >
+										
+											<label for="name">pseudo(*)</label> <input id="name"
+												type="text" class="form-control" name="name" required
+												autofocus th:field="*{username}">
+
+											<div class="text text-danger"
+												th:if="${#fields.hasErrors('username')}"
+												th:errors="*{username}"></div>
+										
+
+
+											<label for="name">nom(*)</label> <input id="firstname"
+												type="text" class="form-control" name="firstname" required
+												autofocus th:field="*{firstname}">
+
+											<div class="text text-danger"
+												th:if="${#fields.hasErrors('firstname')}"
+												th:errors="*{firstname}"></div>
+									
+
+
+										<div class="form-group">
+											<label for="name">prénom(*)</label> <input id="lastname"
+												type="text" class="form-control" name="lastname" required
+												autofocus th:field="*{lastname}">
+											<div class="invalid-feedback">What's your name?</div>
+											<div class="text text-danger"
+												th:if="${#fields.hasErrors('lastname')}"
+												th:errors="*{lastname}"></div>
+										</div>
+
+										<div class="form-group">
+											<label for="name">Date de Naissance(*)</label> <input
+												id="dateNais" type="Date" class="form-control"
+												name="dateNais" required autofocus th:field="*{dateNais}">
+
+											<div class="text text-danger"
+												th:if="${#fields.hasErrors('dateNais')}"
+												th:errors="*{dateNais}"></div>
+										</div>
+
+
+
+										<div class="form-group">
+											<label for="email">adresse email(*)</label> <input id="email"
+												type="email" class="form-control" name="email" required
+												th:field="*{email}">
+
+											<div class="text text-danger"
+												th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></div>
+										</div>
+
+										<div class="form-group">
+											<label for="password">Mot de passe(*)</label> <input
+												id="password" type="password" class="form-control"
+												name="password" required data-eye th:field="*{password}">
+											<div class="invalid-feedback">Password is required</div>
+											<div class="text text-danger"
+												th:if="${#fields.hasErrors('password')}"
+												th:errors="*{password}"></div>
+
+										</div>
+
+										<!-- <input type="file" name="files" multiple required /> -->
+
+
+										<div class="form-group">
+											<label for="password">Sexe(*)</label> <select
+												class="form-control" th:field="*{gender}">
+												<option
+													th:each="genderOpt : ${T(com.bilel.TunisiaGate.domains.Gender).values()}"
+													th:value="${genderOpt.name()}"
+													th:text="${genderOpt.name()}">val</option>
+											</select> 
+										</div>
+
+										<div class="form-group">
+											<label for="role">Je Suis(*)</label> <select
+												class="form-control" th:field="${roless.roleName}" >
+												<option
+													th:each="rol : ${T(com.bilel.TunisiaGate.domains.RoleName).values()}"
+													th:value="${rol.name()}" th:text="${rol.name()}">
+													
+												</option>
+											</select> 
+										</div>
+										<div class="form-group">
+                                            <label >Selectionner votre photo de profil:</label><br>
+                                             <input class="form-control"  type="file" name="files" multiple required />
+                                          </div>
+								
+								
+							<!-- 	
+								<div class="form-group">
+											<label for="doc">choisir votre photo:</label> <input type="file"
+												class="form-control" th:field="${doc.data}"	name="files" multiple  required />
+										</div>
+										<br />
+ -->
+
+
+								<div class="form-group">
+									<div class="custom-checkbox custom-control">
+										<input type="checkbox" name="agree" id="agree"
+											class="custom-control-input" required="" > <label
+											for="agree" class="custom-control-label">j'accepte
+											les <a href="#">termes et conditions</a>
+										</label>
+										<div class="invalid-feedback">tu doit accepter nos
+											termes et conditions pour inscrire</div>
+									</div>
+								</div>
+
+								<div class="form-group m-0">
+									<button type="submit" class="btn btn-primary btn-block">
+										Register</button>
+								</div>
+								<div class="mt-4 text-center">
+									Vous avez déjà un compte?<a href="login">s'identifier</a>
+								</div>
+								</form> 
+							</div>
+						</div>
+						
+						<div class="footer">Copyright &copy; 2020 &mdash; TUNJOBS</div>
+					</div>
+				</div>
+			</div>
+			</div>
+			</div>
+	</section>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+		crossorigin="anonymous"></script>
+	<script src="js/my-login.js"></script>
+</body>
+</html>

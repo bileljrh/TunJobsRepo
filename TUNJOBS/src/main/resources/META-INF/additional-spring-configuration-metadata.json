@@ -1,0 +1,42 @@
+{"properties": [
+  {
+    "name": "Email.user.email",
+    "type": "java.lang.String",
+    "description": "A description for 'Email.user.email'"
+  },
+  {
+    "name": "NotEmpty.user.email",
+    "type": "java.lang.String",
+    "description": "A description for 'NotEmpty.user.email'"
+  },
+  {
+    "name": "NotEmpty.user.firstname",
+    "type": "java.lang.String",
+    "description": "A description for 'NotEmpty.user.firstname'"
+  },
+  {
+    "name": "NotEmpty.user.email",
+    "type": "java.lang.String",
+    "description": "A description for 'NotEmpty.user.email'"
+  },
+  {
+    "name": "NotEmpty.user.email",
+    "type": "java.lang.String",
+    "description": "A description for 'NotEmpty.user.email'"
+  },
+  {
+    "name": "NotEmpty.user.firstname",
+    "type": "java.lang.String",
+    "description": "A description for 'NotEmpty.user.firstname'"
+  },
+  {
+    "name": "server.session.tracking-modes",
+    "type": "java.lang.String",
+    "description": "A description for 'server.session.tracking-modes'"
+  },
+  {
+    "name": "upoadDir",
+    "type": "java.lang.String",
+    "description": "A description for 'upoadDir'"
+  }
+]}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8"/>
+<title>nouvelle annonce</title>
+</head>
+<body>
+<form th:action="@{/newannonce}" th:object="${annonce}" method="post">
+
+
+
+		Nom d'utilisateur <input id="titre" type="text" name="titre"  th:field="*{titre}">
+		Nom d'utilisateur <input id="price" type="text" name="price"  th:field="*{price}">
+		Nom d'utilisateur <input id="description" type="text" name="description"  th:field="*{description}"><br>
+		
+		
+		
+		
+		
+		
+<input type="submit" value="ajouter un article">
+
+
+	</form>
+</body>
+</html>

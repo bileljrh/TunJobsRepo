@@ -1,0 +1,251 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org"
+ xmlns="http://www.w3.org/1999/xhtml"
+   
+    xmlns:sec="http://www.thymeleaf.org">
+ <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js"
+     integrity="sha384-7ox8Q2yzO/uWircfojVuCQOZl+ZZBg2D2J5nkpLqzH1HY0C1dHlTKIbpRz/LG23c" crossorigin="anonymous"></script>
+
+    <title>TUNJOBS</title>
+
+    <!-- Bootstrap core CSS -->
+    
+   
+     <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}"/>
+    
+
+    <!-- Custom styles for this template -->
+  
+     <link rel="stylesheet" type="text/css" th:href="@{/css/styl.css}"/>
+     
+    
+  </head>
+  <body>
+
+    <nav class="navbar navbar-expand-sm navbar-dark bg-primary mb-3">
+        <div class="container-fluid">
+            
+            <a class="navbar-brand" href="/">TUNJOBS</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                   
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">OFFRE D'EMPLOI</a>
+                    </li>
+             <div class="d">
+			<button class="d-btn">Emploi Par Region</button>
+			
+			<div class="d-content">
+				<div class="row">
+					<div class="column">
+						<a href="ville/Ariana">Emploi à Ariana</a>
+						<a href="ville/beja">Emploi à Béja</a>
+						<a href="ville/benArous">Emploi à Ben Arous</a>
+						<a href="ville/bizerte">Emploi à Bizerte</a>
+					</div>
+					<div class="column">
+						<a href="ville/Gabes">Emploi à Gabes</a>
+						<a href="ville/Gafsa">Emploi à Gafsa</a>
+						<a href="ville/Jendouba">Emploi à Jendouba</a>
+						<a href="ville/kairouan">Emploi à kairouan</a>
+					</div>
+					<div class="column">
+						<a href="ville/kasserine">Emploi à Gaserine</a>
+						<a href="ville/Kebili">Emploi à kebeli</a>
+						<a href="ville/kef">Emploi à Kef</a>
+						<a href="ville/Mahdia">Emploi à Mahdia</a>
+					</div>
+					<div class="column">
+						<a href="ville/Manouba">Emploi à Manouba</a>
+						<a href="ville/medenine">Emploi à Medenine</a>
+						<a href="ville/Monastir">Emploi à Monastir</a>
+						<a href="ville/Nabeul">Emploi à Nabeuk</a>
+					</div>
+					<div class="column">
+						<a href="ville/sfax">Emploi à Sfax</a>
+						<a href="ville/sidiBouzid">Emploi à Sidi bouzid</a>
+						<a href="ville/seliana">Emploi à Seliana</a>
+						<a href="ville/soussa">Emploi à Sousse</a>
+					</div>
+					<div class="column">
+						<a href="ville/tatouine">Emploi à Tataouine</a>
+						<a href="ville/touzeur">Emploi à Touzeur</a>
+						<a href="ville/tunis">Emploi à Tunis</a>
+						<a href="ville/zaghouane">Emploi à Zaghouane</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	
+		
+		           <div class="d">
+			<button class="d-btn">Emploi Par Type</button>
+			<div class="d-content">
+				<div class="row">
+					<div class="column">
+						<a href="type/SIVP">Emploi SIVP</a>
+						<a href="type/Saisonnier">Emploi Saisonnier</a>
+						<a href="type/Karama">Emploi Karama</a>
+					</div>
+					<div class="column">
+						<a href="type/TempsPlein">Emploi Temps Plein</a>
+						<a href="type/CDD">Emploi CDD</a>
+						<a href="type/CTT">Emploi CTT</a>
+						
+					</div>
+					<div class="column">
+						<a href="type/Stage">Emploi Stage</a>
+						<a href="type/CDI">Emploi CDI</a>
+						<a href="type/ALTERNANCE">Emploi ALTERNANCE</a>
+	
+					
+					
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		
+		 <div class="d">
+			<button class="d-btn">Emploi Par Categorie</button>
+			<div class="d-content">
+				<div class="row">
+					<div class="column">
+						<a href="categorie/Tourisme">Emploi Tourisme</a>
+						<a href="categorie/Vente">Emploi Vente</a>
+						<a href="categorie/Automobile">Emploi Automobile</a>
+						<a href="categorie/Mecanique">Emploi Mecanique</a>
+						<a href="categorie/Construction">Emploi Construction</a>
+						<a href="categorie/Finance">Emploi Finance</a>
+		
+					</div>
+					<div class="column">
+						<a href="categorie/Industrie">Emploi Industrie</a>
+						<a href="categorie/Administration">Emploi Administration</a>
+						<a href="categorie/Sante">Emploi Sante</a>
+						<a href="categorie/Gestion">Emploi Gestion</a>
+						<a href="categorie/Telecommunications">Emploi Telecommunications</a>
+						<a href="categorie/Electronique">Emploi Electronique</a>
+		
+						
+					</div>
+					<div class="column">
+						<a href="categorie/Banque">Emploi Banque</a>
+						<a href="categorie/Consulting">Emploi Consulting</a>
+						<a href="categorie/Comptabilité">Emploi Comptabilité</a>
+						<a href="categorie/Informatique">Emploi Informatique</a>
+						<a href="categorie/Commerce">Emploi Commerce</a>
+						<a href="categorie/Maeketing">Emploi Maeketing</a>
+	
+		
+					</div>
+				</div>
+			</div>
+		</div>
+
+                 
+                </ul>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a sec:authorize="isAnonymous()" href="login" class="nav-link">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a sec:authorize="isAuthenticated()" href="http://localhost:8080/logout" class="nav-link">Logout</a>
+                    </li>
+                    <li class="nav-item">
+                        <a sec:authorize="isAnonymous()" href="register" class="nav-link" >Register</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+ <button sec:authorize="isAuthenticated()" style="background-color: white" type="button" id="sidebarCollapse" class="btn mb-2"> 
+        <span class="navbar-toggler-icon"><img class="pr-2"  src="img/Hamburger_icon.svg.png" style="width: 25px; margin-top: -5px" alt=""></span>Mon Profile
+    </button>
+    <div class="wrapper">
+
+           <!-- Sidebar -->
+           
+    <nav sec:authorize="isAuthenticated()" id="sidebar" >
+        <ul class="list-unstyled components">
+            
+            <li class="active">
+                <a  href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle togtog">Mes Profile</a>
+                <ul class="collapse list-unstyled" id="homeSubmenu">
+                    <li>
+                        <a href="#">nom</a>
+                    </li>
+                    <li>
+                        <a href="#">prenom</a>
+                    </li>
+                    <li>
+                        <a href="#">username</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="user/annonce/me">Mes Annonces</a>
+            </li>
+            <li>
+                <a href="logout">Déconexion</a>
+            </li>
+        </ul>
+    </nav>
+      
+    
+                    
+<table class="table table-striped table-dark">
+  <thead >
+    <tr>
+      <th scope="col">Prénom du Candidat</th>
+      <th scope="col">Email du Candidat</th>
+      <th scope="col">curriculum vitae du candidat</th>
+      <th scope="col">Titre De L'offre D'emploi</th>
+      <th scope="col">Description De l'emploi</th>
+      <th scope="col">Type D'emploi</th>
+      <th scope="col">adresse de l'emploi</th>      
+    </tr>
+  </thead>
+  <tbody>
+    <tr th:each="off:${ListOffres}">
+      
+      <td th:text="${off.getUser().lastname}"></td>  
+      <td th:text="${off.getUser().email}"></td>    
+      <td><a   th:href="@{'/candidat/'+${off.getDoc().id}+'/cv'}">voir ou télécharger de nouveau Mon CV</a></td>
+      <td th:text="${off.getAnnonces().titre}"></td>
+      <td th:text="${off.getAnnonces().description}"></td>
+      <td th:text="${off.getAnnonces().typeEmploi}"></td>
+      <td th:text="${off.getAnnonces().villeEmploi}"></td>
+      
+      
+
+    </tr>
+    
+   
+  </tbody>
+</table>
+
+
+						
+					
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/js/jquery-3.3.1.min.js"></script>
+    <script src="/js/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="/js/bootstrap.min.js"></script>
+					
+    
+
+</body>
+</html>
